@@ -1,0 +1,168 @@
+/* --- Estilo base --- */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+
+  /* 🖼️ Fundo da tela inicial */
+  background-image: url("imagem 2.jpeg"); /* ajuste o caminho se a imagem estiver fora da pasta css */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* estrutura para manter o rodapé embaixo */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Cabeçalho --- */
+header {
+  background: #080808;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* --- Navegação --- */
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* --- Conteúdo principal --- */
+main.centralizado {
+  flex: 1; /* ocupa o espaço entre o header e o footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center;     /* centraliza horizontalmente */
+  text-align: center;
+  padding: 50px;
+}
+
+/* --- Título principal do main (Conheça a Impacto360) --- */
+main.centralizado h2 {
+  font-size: 3rem;       /* aumenta o tamanho do título */
+  font-weight: 700;      /* deixa mais destacado */
+  text-decoration: underline;
+  text-decoration-thickness: 3px; /* sublinhado mais grosso */
+  text-underline-offset: 6px;     /* distancia o sublinhado do texto */
+  text-shadow: 2px 2px 5px rgba(230, 227, 227, 0.7); /* sombra preta ao redor */
+}
+
+/* --- Balão de destaque --- */
+.balao {
+  background: rgba(255, 255, 255, 0.25); /* branco translúcido real */
+  backdrop-filter: blur(10px); /* efeito vidro fosco */
+  -webkit-backdrop-filter: blur(10px); /* compatibilidade Safari */
+  padding: 25px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); /* sombra suave e elegante */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* borda clara */
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- Efeito ao passar o mouse nos balões --- */
+.balao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Títulos sublinhados e com destaque --- */
+h1 {
+  font-size: 3rem; /* aumenta o tamanho do título principal do header */
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  text-shadow: 2px 2px 5px rgba(20, 19, 19, 0.7); /* sombra preta ao redor */
+}
+
+h2, h3, h4, h5, h6 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* --- Botão --- */
+button#botao {
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f0efb2;
+  color: rgb(14, 12, 12);
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button#botao:hover {
+  background-color: #e5da8e;
+  transform: scale(1.05);
+}
+
+/* --- Link do WhatsApp --- */
+.whatsapp-link {
+  color: #25D366;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.whatsapp-link:hover {
+  color: #128C7E;
+}
+
+/* --- Rodapé --- */
+footer {
+  background: #080808;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* --- Centralização e layout dos balões da seção Sobre Nós --- */
+section.centralizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza os balões horizontalmente */
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 20px; /* espaço entre os balões */
+}
+
+/* --- Ajuste visual dos balões da seção --- */
+section.centralizado .balao {
+  width: 80%;
+  max-width: 700px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section.centralizado .balao:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Remove os pontos das listas --- */
+.balao ul {
+  list-style: none; /* remove os bullets */
+  padding-left: 0;
+  margin: 0;
+}
+
+.balao ul li {
+  margin: 8px 0; /* espaçamento entre os itens */
+  font-weight: 500;
+}

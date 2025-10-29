@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impacto360 - Início</title>
+
+  <!-- ✅ Fonte Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ✅ Biblioteca Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* evita scroll */
+    }
+    /* Canvas fica por trás do conteúdo */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* não bloqueia cliques */
+      z-index: 9999; /* acima de tudo */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Canvas para os fogos -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <header>
+    <h1>Impacto360</h1>
+    <nav>
+      <a href="index.html" class="active">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre-nos.html">Sobre Nós</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main class="centralizado">
+    <div class="balao">
+      <h2>Bem-vindo!</h2>
+      <p>Impulsione seu negócio no mundo digital.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Impacto360 | Amanda Jales & Vitória Regina</p>
+  </footer>
+
+  <!-- ✅ Script de fogos -->
+  <script>
+    window.onload = function() {
+      const canvas = document.getElementById('confetti-canvas');
+      const myConfetti = confetti.create(canvas, {
+        resize: true,
+        useWorker: true
+      });
+
+      const colors = ['#ff0000', '#ffff00', '#ff9900', '#00ff00', '#00ccff', '#ff00ff'];
+
+      function shootFireworks() {
+        // Explosão aleatória
+        myConfetti({
+          particleCount: 6,
+          spread: 60,
+          origin: { x: Math.random(), y: Math.random() * 0.6 },
+          colors: colors
+        });
+
+        // Outra explosão
+        myConfetti({
+          particleCount: 6,
+          spread: 60,
+          origin: { x: Math.random(), y: Math.random() * 0.6 },
+          colors: colors
+        });
+
+        // Continua chamando a função aleatoriamente
+        setTimeout(shootFireworks, 250 + Math.random() * 500);
+      }
+
+      shootFireworks();
+    };
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
